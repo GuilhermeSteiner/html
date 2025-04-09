@@ -1,73 +1,91 @@
 <!DOCTYPE html>
-<html lang = "pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="style2.css" media="all">
-        <title> Guilherme Steiner Amabile</title>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <menu>
-                    <li>
-                        ::marker
-                        <a href="#quem-sou-eu">Sobre</a>
-                    </li>
-                    <li>
-                        ::marker
-                        <a href="#contato">Contato</a>
-                    </li>
-                    <li>
-                        ::marker
-                        <a href="#atuacao">Acadêmico</a>
-                    </li>
-                </menu>
-            </nav>
-        </header>
-        <aside>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style2.css" media="all">
+    <title>Guilherme Steiner Amabile</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <menu>
+                <li><a href="#" onclick="mostrarSecao('quem-sou-eu')">Sobre</a></li>
+                <li><a href="#" onclick="mostrarSecao('atuacao')">Acadêmico</a></li>
+                <li><a href="#" onclick="mostrarSecao('contato')">Contato</a></li>
+            </menu>
+        </nav>
+    </header>
+
+    <aside>
         <h1>Guilherme Steiner Amabile</h1>
         <div>
-            ::before
-            <img width="150px" src="" alt="Foto do Guilherme.">
-            ::after
+            <img width="150px" src="" alt=" Foto do Guilherme.">
         </div>
-        <p>Graduando em Sistemas de Informação UFSC(2024-).</p>
-        <p> Cursando o Terceiro Semestre do curso.</p>
-        </aside>
-        <main>
-            <section id= "#quem-sou-eu">
-                <h1>Quem sou eu</h1>
-                <img id="" alt="Foto do Guilherme.">
-                <p>
-                    "Aluno do curso de Sistemas de Informação na Universidade Federal de Santa Catarina desde 2024."
-                </p>
-                <p>
-                    "Guilherme foi aluno do Educandário Imaculada Conceição (EIC), de 2008 a 2014 e do Colégio Catarinense, de 2015 a 2022, onde encerrou o seu Ensino Fundamental e Médio. Cursou um Pré-Vestibular em 2023 onde estudou para ser aprovado em primeiro lugar na classificação geral do vestibular UFSC/IFSC 2024 em Sistemas de Informação."
-                </p>
-            </section>
-            <section id="atuacao">
-                <h1>Acadêmico</h1>
-                <li>
-                    :marker
-                    "Atua como estagiário na Câmara Municipal dos Vereadores de Florianópolis, desde 2025 até então, na área de Informática."
+        <p>Graduando em Sistemas de Informação UFSC (2024-).</p>
+        <p>Cursando o Terceiro Semestre do curso.</p>
+    </aside>
+
+    <main>
+        <section id="quem-sou-eu">
+            <h1>Quem sou eu?</h1>
+            <img id="" alt=" Foto do Guilherme.">
+            <li>
+                Aluno do curso de Sistemas de Informação na Universidade Federal de Santa Catarina desde 2024.
+            </li>
+            <p>
+
+            </p>
+            <li>
+                Guilherme foi aluno da escola Educandário Imaculada Conceição (EIC) de 2008 a 2014 e do Colégio Catarinense de 2015 a 2022, onde encerrou o seu Ensino Fundamental e Médio.
+            </li>
+            <p>
+
+            </p>
+            <li>
+                Cursou um Pré-Vestibular em 2023 onde estudou para ser aprovado em primeiro lugar na classificação geral do vestibular UFSC/IFSC 2024 em Sistemas de Informação.
+            </li>
+        </section>
+
+        <section id="atuacao">
+            <h1>Acadêmico</h1>
+            <img id="" alt=" Foto do Guilherme.">
+                <li>Já foi professor de matemática e física para o Ensino Fundamental e Médio.
                 </li>
-                <li>
-                    ::marker
-                    "Já foi professor de matemática e física para o Ensino Fundamental e Médio."
+                <li>Atua como estagiário na Câmara Municipal dos Vereadores de Florianópolis, desde março de 2025 até então, na área de Informática.
                 </li>
-            </section>
-            <section id="contato">
-                <h1>Contato</h1>
-                <li>
-                    ::marker
-                    "Telefone(Celular): (48)99148-5008"
+        </section>
+
+        <section id="contato">
+            <h1>Contato</h1>
+            <img id="" alt=" Foto do Guilherme.">
+                <li>Telefone (Celular): (48)99148-5008
                 </li>
-                <li>
-                    ::marker
-                    "Email: guilhermeinformatica2202@gmail.com"
+                <li>Email: guilhermeinformatica2202@gmail.com
                 </li>
-            </section>
-        </main>
-    </body>
+        </section>
+    </main>
+
+    <footer>
+        <span>&copy; 2025 Guilherme Steiner Amabile - Sistemas de Informação (UFSC)</span>
+    </footer>
+
+    <script>
+        function mostrarSecao(id) {
+            const secoes = document.querySelectorAll("main section");
+            secoes.forEach(secao => {
+                secao.style.display = "none";
+            });
+
+            const ativa = document.getElementById(id);
+            if (ativa) {
+                ativa.style.display = "block";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            mostrarSecao('quem-sou-eu');
+        })
+        </script>
+</body>
 </html>
