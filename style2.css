@@ -1,23 +1,65 @@
-#TA TUDO ERRADO!!!!!! TEM QUE ADAPTAR TEM QUE ADAPTAR LEVEL UP.
-
-
-
+/* RESET */
 * {
     margin: 0px;
     padding: 0px;
     border: 0px;
 }
 
+html, body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+        "h h h"
+        "a m m"
+        "f f f";
+    grid-template-columns: minmax(150px, 300px) auto auto;
+    grid-template-rows: 90px 1fr auto;
+
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    outline: 8px solid #0a0f2c;
+}
+
+a, a:visited {
+    color: white;
+}
+
 p {
     margin: 5px;
     text-indent: 20px;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 26px;
+}
+
+li {
+    font-size: 18px;
+}
+
+aside, main section {
+    border: 2px solid rgb(0, 0, 255);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+main section {
+    display: none;
 }
 
 aside {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-around; */
     background-color: black;
     color: white;
     grid-area: a;
@@ -44,32 +86,21 @@ aside {
     background-color: transparent;
 }
 
-.blured-box::before {
+.blured-box::before,
+.blured-box::after {
     content: '';
     position: absolute;
     top: -2px;
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background-color: white;
+    background: linear-gradient(235deg, white, black, rgb(0, 0, 255));
     z-index: -1;
 }
 
 .blured-box::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: white;
-    z-index: -2;
     filter: blur(30px);
-}
-
-.blured-box::before,
-.blured-box::after {
-    background: linear-gradient(235deg, white, black, yellowgreen);
+    z-index: -2;
 }
 
 header {
@@ -100,12 +131,19 @@ menu a {
     text-decoration: none;
 }
 
-menu a:link {
+footer {
+    grid-area: f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to top, black 90%, #111);
     color: white;
-}
-
-menu a:visited {
-    color: white;
+    height: 50px;
+    padding: 0 20px;
+    border-top: 1px solid #333;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
 }
 
 #section-contact {
@@ -115,33 +153,18 @@ menu a:visited {
     margin-bottom: 20px;
 }
 
-
-body {
-    display: grid;
-    grid-template-areas: 
-        "h h h"
-        "a m m"
-        "f f f";
-    grid-template-columns: minmax(150px, 300px) auto auto;
-    grid-template-rows: minmax(30px, 70px) minmax(0, 1fr) minmax(30px, 50px);
-    grid-gap: 0px 0px;
-    /* min-height: 100vh; */
-    overflow-y: hidden;
-    max-height: 100vh;
-}
-
 main {
     grid-area: m;
     display: flex;
     flex-direction: column;
     margin-left: 10px;
     margin-right: 10px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 main::-webkit-scrollbar {
-    width: 0 !important
-    }
+    width: 0 !important;
+}
 
 main h1 {
     margin-top: 30px;
@@ -152,18 +175,6 @@ main h2 {
     margin-top: 15px;
     margin-bottom: 10px;
 }
-
-footer {
-    padding-left: 10px;
-    padding-right: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    grid-area: f;
-    color: white;
-}
-
 
 @media screen and (max-width: 600px) {
     aside {
@@ -196,3 +207,45 @@ footer {
     #photo-whoami {
         display: none;
     }
+}
+
+nav menu li {
+    padding: 0 10px;
+    position: relative;
+}
+
+nav menu {
+    list-style-type: none;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+nav menu li {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #0000ff;
+    height: 100%;
+}
+
+nav menu a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 90px; /* mesma altura da barra */
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+nav menu a:hover {
+    background-color: #0a0f2c;
+}
